@@ -1,0 +1,89 @@
+name: go_hurghada
+description: "Egypt Domestic Flight Booking - Search & Redirect App"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # UI
+  cupertino_icons: ^1.0.8
+  
+  # Navigation
+  go_router: ^14.6.2
+  
+  # Networking
+  dio: ^5.7.0
+  http: ^1.2.2
+  
+  # Code Generation
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
+  
+  # Environment Variables
+  flutter_dotenv: ^5.2.1
+  
+  # URL Launcher
+  url_launcher: ^6.3.1
+  
+  # Date Formatting
+  intl: any
+  
+  # Utilities
+  equatable: ^2.0.7
+  dartz: ^0.10.1
+  
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # Utilities
+  uuid: ^4.2.1
+  
+  # PDF Generation
+  pdf: ^3.10.0
+  printing: ^5.11.0
+  path_provider: ^2.1.0
+  google_fonts: ^6.3.2
+  
+  # AI
+
+  # Image Picking
+  image_picker: ^1.1.2
+  shimmer: ^3.0.0
+  firebase_core: ^4.4.0
+  firebase_auth: ^6.1.4
+  cloud_firestore: ^6.1.2
+  firebase_storage: ^13.3.0
+  firebase_ai: ^3.12.2
+  google_generative_ai: ^0.4.7
+  cached_network_image: ^3.4.1
+  webview_flutter: ^4.10.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  
+  # Code Generation
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.8.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/logos/
+    - .env

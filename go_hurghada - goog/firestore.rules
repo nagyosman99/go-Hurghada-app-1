@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Hotels and rooms - public read
+    match /hotels/{hotelId} {
+      allow read: if true;
+      match /rooms/{roomId} {
+        allow read: if true;
+      }
+    }
+
+    // Activities, flights, offers - public read
+    match /activities/{id} { allow read: if true; }
+    match /flights/{id} { allow read: if true; }
+    match /offers/{id} { allow read: if true; }
+
+    // User profiles - user can read/write their own
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      // User bookings subcollection - user can read/write their own
+      match /bookings/{bookingId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // Root bookings collection (Hotel Bookings)
+    match /bookings/{bookingId} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    // Root activity_bookings collection
+    match /activity_bookings/{id} {
+      allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+      allow read, update, delete: if request.auth != null && resource.data.userId == request.auth.uid;
+    }
+
+    // collectionGroup query for room availability (read only, authenticated)
+    match /{path=**}/bookings/{bookingId} {
+      allow read: if request.auth != null;
+    }
+  }
+}

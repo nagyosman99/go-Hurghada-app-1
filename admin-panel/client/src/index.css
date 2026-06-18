@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #0061ff;
+  --secondary: #FF2D55;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f8fafc;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

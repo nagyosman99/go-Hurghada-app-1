@@ -1,0 +1,32 @@
+# Build configuration for code generation
+targets:
+  $default:
+    builders:
+      freezed:
+        enabled: true
+        options:
+          # Generate copyWith methods
+          copyWith: true
+          # Generate == operator
+          equal: true
+          # Generate toString method
+          to_string: true
+          # Generate map/fromJson methods
+          map: true
+          # Use @Default annotation
+          default_value: true
+      
+      json_serializable:
+        enabled: true
+        options:
+          # Generate both toJson and fromJson
+          any_map: false
+          checked: false
+          create_factory: true
+          create_to_json: true
+          disallow_unrecognized_keys: false
+          explicit_to_json: true
+          field_rename: none
+          generic_argument_factories: false
+          ignore_unannotated: false
+          include_if_null: true

@@ -1,0 +1,33 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "go-hurghada-ffab9",
+          "appId": "1:925908168972:android:1e7195909f8ac0b93d1929",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "go-hurghada-ffab9",
+          "configurations": {
+            "android": "1:925908168972:android:1e7195909f8ac0b93d1929",
+            "ios": "1:925908168972:ios:96a76255c0d109f43d1929",
+            "web": "1:925908168972:web:356e0f3a879b7b6f3d1929",
+            "windows": "1:925908168972:web:36957063e1e0e0913d1929"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "auth": {
+    "providers": {
+      "emailPassword": true
+    }
+  }
+}

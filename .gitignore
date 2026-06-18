@@ -1,0 +1,32 @@
+# Root gitignore for the combined Go-Hurghada repository
+
+# Ignore Git backup folders
+git_backup/
+*git_backup/
+
+# Node/React dependencies and builds
+**/node_modules/
+**/dist/
+**/build/
+**/.dart_tool/
+**/.pub-cache/
+**/.pub/
+
+# OS/IDE files
+.DS_Store
+.idea/
+.vscode/
+*.iml
+*.suo
+
+# Environment variables and secrets
+**/.env
+**/.env.*
+**/serviceAccountKey.json
+
+# Local databases and temp files
+**/*.hive
+**/test_hive/
+**/analyze_output.*
+**/analysis_final_*
+**/report_ascii.txt
